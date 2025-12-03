@@ -9,10 +9,13 @@ int main() {
     printf("Enter a Fibonacci number to find?:  ");
     scanf("%d",&x);
 
-
+    //Printing the n fibonacci Sequence
     for (int i=0;i<=x;i++) {
         printf("%d ", fibonacci(i));
     }
+
+    //Printing the n fibonacci
+    printf("%d", fibonacci(x));
 
 }
 

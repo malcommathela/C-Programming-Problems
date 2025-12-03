@@ -8,19 +8,20 @@ int main(){
     int a = 10;
     int *b = &a;
 
-    printf("%d\n",*b);
+    printf("Address of a is %p\n", b);
+    printf("Value of a: %d\n",*b);
 
 
     //-----------------------------
     // More advanced use of pointers
-    // Array's are just fancy pointers
+    // Arrays are just fancy pointers
 
     char array[5] = {'a','b','c','d','e'};
     char *sameArray = array;
     char **fancy_same_array = &sameArray;
 
     printf("Array[3]: %c Address: %p\n",array[3],&array[3]);
-    printf("SameArray[3]: %c Address: %p",sameArray[3],&sameArray[3]);
+    printf("SameArray[3]: %c Address: %p\n",sameArray[3],&sameArray[3]);
     printf("**fancy_same_array[3] = %c, addr = %p\n", (*fancy_same_array)[3], &(*fancy_same_array)[3]);
 
     //------------------------------------
