@@ -46,8 +46,8 @@ int main(){
 
     //Multiply arrays 'a' and 'b' and storing the result in array 'c'
     printf("Resultant matrix after Multiplication:\n");
-    for(int i = 0; i < c1; i++){
-        for(int j = 0; j < r2; j++){
+    for(int i = 0; i < r1; i++){
+        for(int j = 0; j < c2; j++){
             k[i][j] = 0;
             for(int g = 0; g < c1; g++){
                 k[i][j] += a[i][g] * b[g][j];

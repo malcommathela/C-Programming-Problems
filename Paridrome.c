@@ -45,8 +45,7 @@ int isParidromeString(const char* s){
 }
 
 
-int main(){
-
+int main() {
     printf("Choose the following choices:\n\n1.Chech if a number is a paridrome\n2.Check if a string is a paridrome\n>> ");
     int choice;
     scanf("%d",&choice);
@@ -65,29 +64,28 @@ int main(){
         }
 
     }
-    else if (choice == 2){
-
+    else if (choice == 2) {
         char word_phrase[50];
         printf("Enter word or Phrase: ");
         fgets(word_phrase,sizeof(word_phrase),stdin);
         word_phrase[strlen(word_phrase) - 1] = '\0';
 
-        while(getchar != '\0');
+        while(getchar != '\0'){
 
-        if(isParidromeString(word_phrase)){
-            printf("%S is a paridrome String",word_phrase);
+            if(isParidromeString(word_phrase)){
+                printf("%S is a paridrome String",word_phrase);
+            }
+            else{
+                printf("%S is not paridrome String",word_phrase);
+
+            }
+
         }
-        else{
-            printf("%S is not paridrome String",word_phrase);
-
-        }
-
-
     }
-    else{
-        printf("Invalid Choice");
-
+    else {
+        printf("Invalid choice");
     }
 
     return 0;
 }
+
