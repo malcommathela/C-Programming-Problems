@@ -1,103 +1,170 @@
-//
-// Created by malco on 01/15/2026.
-//
+#include<stdio.h>
+#include<stdlib.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-
-struct Node{
-    int val;
+typedef struct Node {
+    int data;
     struct Node *next;
-};
+} Node;
 
 
-// Insert at the Beginning
+// Get data at index
+int get(Node *head, int index) {
 
-struct Node* insertBegin(struct Node* head, int val) {
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-    newNode->val = val;
-    newNode->next = head;
-    return newNode;
+    Node *curr = head;
+    int i = 0;
+    while (curr != NULL) {
+        if (i == index) {
+            return curr->data;
+        }
+        i++;
+        curr = curr->next;
+    }
+    return -1;
 }
 
+//Insert at head
+Node *insertAThead(Node *head, int data) {
+    Node *newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = data;
+    newNode->next = head;
+    head = newNode;
+    return newNode;
 
-// Insert at the end
+}
 
-struct Node* insertEnd(struct Node* head, int val) {
-    struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
-    newNode->val = val;
+// Insert at Tail
+Node *insertAtTail(Node *head, int data) {
+    Node *newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = data;
     newNode->next = NULL;
 
     if (head == NULL) {
         return newNode;
     }
-
-    struct Node* temp = head;
+    Node *temp = head;
     while (temp->next != NULL) {
         temp = temp->next;
     }
-
     temp->next = newNode;
     return head;
 }
 
-// Delete at the beginning
-struct Node* deleteBegin(struct Node* head) {
-    struct Node* temp = head;
-    head = head->next;
-    free(temp);
-    return head;
-}
+// Insert at Index
+Node *insertAtIndex(Node *head, int data, int index) {
 
-// Insert at a position
-
-struct Node* insertPos(struct Node* head, int val, int pos) {
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-    newNode->val = val;
-
-    if (pos == 1) {
-        newNode -> next = head;
+    // Case 1: Insert at beginning
+    if (index == 0) {
+        Node *newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = data;
+        newNode->next = head;
+        return newNode;
     }
 
-    struct Node* temp = head;
-    for (int i = 0; i < pos - 1; i++) {
+
+    Node *temp = head;
+    // Traverse to (index - 1) position
+    int i = 0;
+    while (i < index - 1 && temp != NULL) {
         temp = temp->next;
+        i++;
     }
 
+    // Index out of range
+    if (temp == NULL) {
+        printf("Index out of range");
+        return head;
+    }
+
+    Node *newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = data;
     newNode->next = temp->next;
     temp->next = newNode;
     return head;
 
 }
 
+// Delete At head
+Node *deleteAtHead(Node *head) {
 
-// Display  the list
+    // Case 1: Empty list
+    if (head == NULL) {
+        printf("List is empty\n");
+        return NULL;
+    }
 
-void display(struct Node* head) {
-    struct Node* temp = head;
-    printf("List is :\n");
-    while (temp != NULL) {
-        printf("%d ", temp->val);
+    // Case 2: Only one node
+    if (head->next == NULL) {
+        free(head);
+        return NULL;
+    }
+
+    // Case 3: More than one node
+    Node *temp = head;
+    head = head->next;
+    free(temp);
+    return head;
+}
+
+//Delete at index
+Node *deleteAtIndex(Node *head, int index) {
+
+    if (head == NULL) {
+        printf("List is empty");
+        return head;
+    }
+
+    if (index == 0) {
+        Node *temp = head;
+        head = head->next;
+        free(temp);
+        return head;
+    }
+
+    Node *temp = head;
+    int i = 0;
+    while (i < index - 1 && temp->next != NULL) {
+        temp = temp->next;
+        i++;
+    }
+
+    if (temp->next == NULL) {
+        printf("Index out of range");
+        return head;
+    }
+
+    Node *nodeToDelete = temp->next;
+    temp->next = nodeToDelete->next;
+    free(nodeToDelete);
+    return head;
+
+}
+
+// Delete at tail
+Node *deleteAtTail(Node *head) {
+
+    //If list is empty
+    if (head == NULL) {
+        printf("List is empty");
+        return head;
+    }
+
+    //If list has one node
+    if (head->next == NULL) {
+        free(head);
+        return NULL;
+    }
+
+    //If more than one Node
+    Node *temp = head;
+
+    while (temp->next->next != NULL) {
         temp = temp->next;
     }
+
+    free(temp->next);
+    temp->next = NULL;
+    return head;
+
+
 }
-
-
-
-int main() {
-    struct Node* head = NULL;
-
-    head = insertEnd(head, 10);
-    head = insertEnd(head, 20);
-    head = insertEnd(head, 30);
-
-    display(head);
-    return 0;
-}
-
-
-
-
-
-
 

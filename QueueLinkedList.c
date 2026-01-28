@@ -19,12 +19,17 @@ void enqueue(int value) {
     newNode->data = value;
     newNode->next = NULL;
 
+    // If queue is empty upon insertion
     if (rear == NULL) {
         front = rear = newNode;
     }
-    rear->next = newNode;
-    rear = newNode;
-    printf("%d enqueued int the queue\n", value);
+    else {
+
+        rear->next = newNode;
+        rear = newNode;
+        printf("%d enqueued int the queue\n", value);
+    }
+
 }
 
 

@@ -25,7 +25,7 @@ void enqueue(int data) {
 
 // Dequeue Operation
 void dequeue() {
-    if (front == -1) {
+    if (front == -1 || front > rear) {
         printf("Queue is empty");
     }else {
         printf("%d dequeued from queue\n", queue[front++]);
