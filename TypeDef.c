@@ -2,6 +2,8 @@
 
 typedef char* String;
 
+typedef int Number;
+
 typedef struct {
     int productId;
     String name;

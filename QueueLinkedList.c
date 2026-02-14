@@ -1,67 +1,74 @@
-//
-// Created by malco on 01/13/2026.
-//
-
 #include <stdio.h>
 #include <stdlib.h>
 
 typedef struct Node {
     int data;
     struct Node *next;
-}Node;
+} Node;
 
-Node *front = NULL;
-Node *rear = NULL;
-
-// Enqueue Op
-void enqueue(int value) {
-    Node *newNode = (Node*)malloc(sizeof(Node));
+Node *enqueue(Node *head, int value) {
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    if (newNode == NULL) {
+        printf("Memory allocation failed\n");
+        return head;
+    }
     newNode->data = value;
     newNode->next = NULL;
 
-    // If queue is empty upon insertion
-    if (rear == NULL) {
-        front = rear = newNode;
-    }
-    else {
-
-        rear->next = newNode;
-        rear = newNode;
-        printf("%d enqueued int the queue\n", value);
+    if (head == NULL) {
+        return newNode;
     }
 
+    Node *temp = head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = newNode;
+    return head;
 }
 
-
-// Dequeue Op
-void dequeue() {
-    if (front == NULL) {
+int dequeue(Node *head) {
+    if (head == NULL) {
         printf("Queue is empty\n");
-    }else {
-        Node *temp = front;
-        front = front->next;
-
-        // If the queue becomes empty
-        if (front == NULL) {
-            rear = NULL;
-        }
-        free(temp);
+        return -1;
     }
 
+    Node *temp = head;
+    int value = temp->data;
+    head = head->next;
+    free(temp);
+    return value;
 }
 
-// Display Op
-void display() {
-
-    if (front == NULL) {
+//Display Op
+void printQueue(Node *head) {
+    if (head == NULL) {
         printf("Queue is empty\n");
-    }else {
-        Node *temp = front;
-        printf("Queue Elements:\n");
-        while (temp != NULL) {
-            printf("%d ", temp->data);
-            temp = temp->next;
-        }
-        printf("\n");
+        return;
     }
+    Node *temp = head;
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
 }
+
+int main() {
+    Node *head = NULL;
+
+    head = enqueue(head, 10);
+    head = enqueue(head, 20);
+    head = enqueue(head, 30);
+
+    printQueue(head);  // 10 20 30
+
+    int val = dequeue(head);
+    printf("Dequeued: %d\n", val);  // 10
+    printQueue(head);               // 20 30
+
+    return 0;
+}
+
+
+
