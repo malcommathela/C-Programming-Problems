@@ -18,35 +18,24 @@ int isParidromeNumber(int n){
     return og_num == reversed_num;
 }
 
-int isParidromeString(const char* s){
+void isParidromeString(char s[]){
     int left = 0;
     int right = strlen(s) - 1;
 
-    while(left < right){
+    while(left < right) {
 
-        while(left < right && isalnum(s[left])){
-            left++;
+        if (s[left++] != s[right--]) {
+            printf("%s is not a palindrome",s);
+            return;
         }
-
-        while(left < right && isalnum(s[right])){
-            right--;
-        }
-
-        if(tolower(s[left]) != tolower(s[right])){
-            return 0;
-        }
-
-        left++;
-        right--;
-
     }
 
-    return 1;
+    printf("%s is a palindrome",s);
 }
 
 
 int main() {
-    printf("Choose the following choices:\n\n1.Chech if a number is a paridrome\n2.Check if a string is a paridrome\n>> ");
+    printf("Choose the following choices:\n\n1.Check if a number is a palindrome\n2.Check if a string is a palindrome\n>> ");
     int choice;
     scanf("%d",&choice);
     if(choice == 1){
@@ -64,23 +53,15 @@ int main() {
         }
 
     }
+
     else if (choice == 2) {
+
         char word_phrase[50];
         printf("Enter word or Phrase: ");
         fgets(word_phrase,sizeof(word_phrase),stdin);
         word_phrase[strlen(word_phrase) - 1] = '\0';
+        isParidromeString(word_phrase);
 
-        while(getchar != '\0'){
-
-            if(isParidromeString(word_phrase)){
-                printf("%S is a paridrome String",word_phrase);
-            }
-            else{
-                printf("%S is not paridrome String",word_phrase);
-
-            }
-
-        }
     }
     else {
         printf("Invalid choice");

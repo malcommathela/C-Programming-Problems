@@ -16,10 +16,10 @@ int main() {
 
     for (int i = 0; line[i] != '\0'; i++) {
         line[i] = tolower(line[i]);
-        if (line[i] == 'a' || line[i] == 'e' || line[i] == 'i' || line[i] == 'o ' || line[i] == 'u') {
+        if (line[i] == 'a' || line[i] == 'e' || line[i] == 'i' || line[i] == 'o' || line[i] == 'u') {
             vowels++;
         }
-        else if (line[i] >='a' && line[i] <= 'z'){
+        else if (line[i] >= 'a' && line[i] <= 'z'){
             consonants++;
         }
         else if (line[i] >= 0 && line[i] <= '9') {

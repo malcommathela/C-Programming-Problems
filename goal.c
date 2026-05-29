@@ -34,7 +34,7 @@ int main(){
         for(int i=0;i<n;i++)
         {
 
-            
+
             if(i<h)
             {
 
@@ -43,7 +43,7 @@ int main(){
                     printf(" ");
                 }
 
-                if(i==h-1){ 
+                if(i==h-1){
                     printf("**\n");
                 }
                 else printf("* *\n");
@@ -61,10 +61,10 @@ int main(){
                 printf("* *\n");
                 c--;
             }
-            
+
             printf("\n");
         }
-        
+
 
     }
 
