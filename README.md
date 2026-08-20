@@ -1,59 +1,204 @@
 # C-Programming-Problems
 
-A collection of **100+ C programming problems with solutions** designed to improve problem-solving skills and strengthen core programming concepts.
+A collection of **C programming problems, data structures, algorithms, and practical examples** for learning and improving problem-solving skills.
 
-## 📚 What You'll Find
+This repository contains programs ranging from **basic C programming concepts** to **advanced data structures and sorting/searching algorithms**.
 
-* Basic C programming problems
+## 📚 Topics Covered
+
+### 🔹 C Programming Basics
+
 * Input and output
+* Variables and data types
+* Arithmetic operations
 * Conditional statements
-* Loops and patterns
+* Loops
 * Functions
-* Arrays and strings
-* Pointers
 * Recursion
-* Structures
 * Number-based problems
-* Searching and sorting
-* Mathematical and logical problems
-* Practice problems with complete solutions
+* Pattern programs
 
-## 🎯 Goal
+### 🔹 Arrays & Matrices
 
-This repository is focused on **problem solving using the C programming language**. It is suitable for beginners, students, and anyone preparing for programming exams or coding interviews.
+* 1D arrays
+* Array insertion
+* Array copying
+* Duplicate detection
+* Min/Max elements
+* Sum and average
+* Matrix multiplication
+* Matrix addition
+* Matrix transpose
+* Lower triangular matrices
+* Pointers with arrays
 
-## 🛠️ Language
+### 🔹 Strings
 
-**C**
+* String manipulation
+* String functions
+* Vowel and consonant counting
+* Lexicographic sorting
+* Case conversion
 
-## 📂 Structure
+### 🔹 Pointers
 
-Each problem contains a clear problem statement and a corresponding C solution to make learning and practice easier.
+* Basic pointers
+* Call by value
+* Call by reference
+* Pointers with 1D arrays
+* Pointers with 2D arrays
 
-## 🚀 Getting Started
+### 🔹 Structures & User-Defined Types
 
-Clone the repository and choose any problem you want to practice:
+* Structures
+* Nested structures
+* Arrays of structures
+* Student structures
+* `typedef`
+* Unions
+* Bit fields
+* Structure copying and resizing
 
-```bash
-git clone https://github.com/your-username/C-Programming-Problems.git
-cd C-Programming-Problems
+### 🔹 Linked Lists
+
+* Singly linked lists
+* Circular linked lists
+
+### 🔹 Stacks & Queues
+
+* Stack using arrays
+* Stack using linked lists
+* Queue using arrays
+* Queue using linked lists
+* Circular queues
+* Priority queues
+
+### 🔹 Trees & Graphs
+
+* Binary Search Trees
+* AVL Trees
+* Breadth-First Search (BFS)
+* Depth-First Search (DFS)
+
+### 🔹 Searching & Sorting
+
+* Linear Search
+* Binary Search
+* Bubble Sort
+* Selection Sort
+* Merge Sort
+* Quick Sort
+* Counting Sort
+* Radix Sort
+* String sorting
+
+### 🔹 Mathematical & Logical Problems
+
+* Prime numbers
+* Armstrong numbers
+* Palindrome numbers
+* Factorial
+* Fibonacci series
+* GCD and LCM
+* Super digits
+* Square roots
+* Number reversal
+* Sum of numbers
+* Temperature conversion
+* Area calculations
+* Electricity bill calculation
+
+## 🗂️ Project Structure
+
+The repository contains individual `.c` source files, with each file generally focusing on a specific programming problem, concept, data structure, or algorithm.
+
+Examples:
+
+```text
+C-Programming-Problems/
+├── Arrays
+├── Strings
+├── Pointers
+├── Structures
+├── Linked Lists
+├── Stacks & Queues
+├── Trees
+├── Graphs
+├── Searching
+├── Sorting
+└── Mathematical Problems
 ```
 
-Compile and run a program using:
+> **Note:** The current repository keeps the programs as individual `.c` files rather than organizing them into separate directories.
+
+## 🛠️ Technologies
+
+* **C Programming Language**
+* GCC / Clang
+* CLion
+* Git & GitHub
+
+## 🚀 How to Run
+
+### Using GCC
+
+Compile any C program:
 
 ```bash
-gcc program.c -o program
-./program
+gcc filename.c -o filename
 ```
+
+Run it:
+
+```bash
+./filename
+```
+
+### Example
+
+```bash
+gcc BubbleSort.c -o BubbleSort
+./BubbleSort
+```
+
+On Windows:
+
+```powershell
+gcc BubbleSort.c -o BubbleSort.exe
+.\BubbleSort.exe
+```
+
+## 🎯 Purpose
+
+The main purpose of this repository is to provide a practical collection of C programs for:
+
+* Learning C programming
+* Practicing problem solving
+* Understanding data structures
+* Learning algorithms
+* Preparing for university examinations
+* Preparing for coding interviews
+* Building a strong programming foundation
+
+## 📈 Progress
+
+The repository is continuously growing and contains **100+ C programs and implementations**, covering both fundamental programming concepts and advanced data structures and algorithms.
 
 ## 🤝 Contributions
 
-Contributions, improvements, and additional problem solutions are welcome.
+Contributions are welcome. You can contribute by:
+
+* Adding new C programming problems
+* Improving existing solutions
+* Fixing bugs
+* Improving code readability
+* Adding comments and explanations
+* Adding new algorithms or data structures
 
 ## ⭐ Support
 
-If you find this repository useful, consider giving it a **star** and sharing it with other learners.
+If this repository helps you learn C programming, consider giving it a **⭐ Star** on GitHub.
 
 ---
 
-**Happy Coding! 💻**
+**Keep practicing. Keep solving. Keep coding. 💻**
